@@ -10,8 +10,6 @@
 // add a boolean to a number without converting it with a function first.
 //
 
-// I AM STILL GOING
-
 package main
 
 import "fmt"
@@ -20,5 +18,5 @@ func main() {
 	// Oops! Looks like someone wanted to add 2.7 to Pi but
 	// typed it in as a string. Change 2.7 to be a number so
 	// that the result of 3.14159 plus 2.7 is printed.
-	fmt.Println(3.14159 + "2.7")
+	fmt.Println(3.14159 + 2.7)
 }

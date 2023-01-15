@@ -1,7 +1,5 @@
 // Problem:
 
-// I AM STILL GOING
-
 package main
 
 import "fmt"
@@ -13,7 +11,11 @@ func main() {
 	// We'd like to be able to add an admin.
 	// Create a method that can add users to the database.
 	db.AddAdmin("richie@example.com")
-	fmt.Println(db.IsAdmin("richie@example.com"), db.IsAdmin("ned@hack.com"))
+	fmt.Println(
+		db.IsAdmin("richie@example.com"),
+		db.IsAdmin("clair@example.com"),
+		db.IsAdmin("ned@hack.com"),
+	)
 }
 
 type userDatabase struct {
@@ -24,11 +26,15 @@ type userDatabase struct {
 
 // IsAdmin returns true if the email is inside the admin database
 // and false otherwise.
-func (u userDatabase) IsAdmin(email string) bool {
-	for _, got := range u.admins {
+func (db userDatabase) IsAdmin(email string) bool {
+	for _, got := range db.admins {
 		if got == email {
 			return true
 		}
 	}
 	return false
+}
+
+func (db *userDatabase) AddAdmin(email string) {
+	db.admins = append(db.admins, email)
 }

@@ -16,7 +16,9 @@ import "fmt"
 
 func main() {
 	fibonacci := []int{0, 1, 1, 2, 3, 5, 8, 13}
-	fiboAdded := fibonacci
+	fiboAdded := clone(fibonacci)
+	// fiboAdded := make([]int, len(fibonacci))
+	// copy(fiboAdded, fibonacci)
 	for i := range fiboAdded {
 		fiboAdded[i] += i
 	}
@@ -28,5 +30,6 @@ func main() {
 }
 
 func clone(a []int) []int {
-	return append([]int{}, a...)
+	var res []int
+	return append(res, a...)
 }

@@ -21,8 +21,6 @@
 // value of the range clause is the nth value in the slice.
 //
 
-// I AM STILL GOING
-
 package main
 
 import "fmt"
@@ -36,7 +34,7 @@ func main() {
 	// returned by the range clause.
 	slice := []int{1, 2, 3, 4}
 	for i, v := range slice {
-		slice[v] = 2 * i
+		slice[i] = 2 * v
 	}
 	fmt.Println(slice)
 }
