@@ -21,8 +21,8 @@ func main() {
 	// These lines below once uncommented should run with no problem once the
 	// problem at hand has been solved.
 
-	// d := Decimal(myNumber)
-	// PrintNumber(d)
+	d := Decimal(myNumber)
+	PrintNumber(d)
 
 	b := Binary(myNumber)
 	PrintNumber(b)
@@ -45,6 +45,7 @@ func PrintNumber(n Number) {
 
 type Binary int
 type Roman int
+type Decimal float64
 
 func (b Binary) Numeral() string {
 	return fmt.Sprintf("%b", b)
@@ -78,4 +79,8 @@ func (r Roman) Numeral() (numeral string) {
 		numeral = "error: roman numeral too large"
 	}
 	return numeral
+}
+
+func (d Decimal) Numeral() string {
+	return fmt.Sprintf("%.2f", d)
 }
